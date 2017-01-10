@@ -14,6 +14,7 @@ namespace Lab01_WilliamFichtner
         static void Main(string[] args)
         {
             double userInput = 0;
+
             double fifties = 0;            
             double twenties = 0;
             double tens = 0;
@@ -24,12 +25,17 @@ namespace Lab01_WilliamFichtner
             double dimes = 0;
             double nickels = 0;
 
+            //Asks for user input and ensures the input is in proper format
             Console.WriteLine("Please enter a dollar amount:");
             while(double.TryParse(Console.ReadLine(), out userInput)== false)
             {
                 Console.WriteLine("Please enter a valid dollar amount: ");
             }
-            Console.WriteLine("User entry of {0} interpreted and rounded to {1}", userInput, userInput);
+
+            userInput = Math.Round(userInput / 0.05) * 0.05;
+
+
+            Console.WriteLine("User entry interpreted and rounded to {0:C}", userInput);
 
             //Calculates amount of $50 bills and prepares the remainder for further calc
             fifties = CurrencyCalc(userInput, 50);
