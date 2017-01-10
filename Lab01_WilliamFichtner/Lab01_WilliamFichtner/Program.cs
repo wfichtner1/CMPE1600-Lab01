@@ -11,10 +11,12 @@ namespace Lab01_WilliamFichtner
 {
     class Program
     {
+
+
         static void Main(string[] args)
         {
+            CDrawer canvas = new CDrawer();
             double userInput = 0;
-
             double fifties = 0;            
             double twenties = 0;
             double tens = 0;
@@ -41,6 +43,7 @@ namespace Lab01_WilliamFichtner
             fifties = CurrencyCalc(userInput, 50);
             Display(fifties, "Fifties");
             userInput = userInput - (fifties * 50);
+            
 
             //Calculates the amount of $20 bills and prepares the remainder for further calc
             twenties = CurrencyCalc(userInput, 20);
@@ -82,6 +85,8 @@ namespace Lab01_WilliamFichtner
             Display(nickels, "Nickels");
             userInput = userInput - (nickels * 0.05);
 
+
+
             Console.ReadLine();
         }
 
@@ -98,6 +103,10 @@ namespace Lab01_WilliamFichtner
         private static void Display(double amount, string input)
         {
             Console.WriteLine("{0}: {1}", input, amount);
+        }
+        private static void Draw(CDrawer canvas, double amount)
+        {
+
         }
     }
 }
