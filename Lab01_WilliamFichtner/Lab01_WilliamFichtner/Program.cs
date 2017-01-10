@@ -25,7 +25,10 @@ namespace Lab01_WilliamFichtner
             double nickels = 0;
 
             Console.WriteLine("Please enter a dollar amount:");
-            double.TryParse(Console.ReadLine(), out userInput);
+            while(double.TryParse(Console.ReadLine(), out userInput)== false)
+            {
+                Console.WriteLine("Please enter a valid dollar amount: ");
+            }
             Console.WriteLine("User entry of {0} interpreted and rounded to {1}", userInput, userInput);
 
             //Calculates amount of $50 bills and prepares the remainder for further calc
