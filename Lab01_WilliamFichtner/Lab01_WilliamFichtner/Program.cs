@@ -137,7 +137,10 @@ namespace Lab01_WilliamFichtner
         }
         private static void Draw(Denominations[] arr)
         {
-
+            foreach(Denominations n in arr)
+            {
+                
+            }
         }
     }
 }
