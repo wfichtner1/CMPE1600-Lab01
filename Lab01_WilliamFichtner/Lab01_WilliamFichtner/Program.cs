@@ -11,11 +11,24 @@ namespace Lab01_WilliamFichtner
 {
     class Program
     {
+        struct Denominations
+        {
+            public string _name;
+            public double _amount;
 
+            public Denominations(string name, double amount)
+            {
+                _name = name;
+                _amount = amount;
+            }
+
+        }
+        
 
         static void Main(string[] args)
         {
             CDrawer canvas = new CDrawer();
+            Denominations[] denomArray = new Denominations[9];           
             double userInput = 0;
             double fifties = 0;            
             double twenties = 0;
@@ -43,47 +56,55 @@ namespace Lab01_WilliamFichtner
             fifties = CurrencyCalc(userInput, 50);
             Display(fifties, "Fifties");
             userInput = userInput - (fifties * 50);
-            
+            new Denominations("$50", fifties);
 
             //Calculates the amount of $20 bills and prepares the remainder for further calc
             twenties = CurrencyCalc(userInput, 20);
             Display(twenties, "Twenties");
             userInput = userInput - (twenties * 20);
+            new Denominations("$20", twenties);
 
             //Calculates the amount of $10 bills and prepares the remainder for further calc
             tens = CurrencyCalc(userInput, 10);
             Display(tens, "Tens");
             userInput = userInput - (tens * 10);
+            new Denominations("$10", tens);
 
             //Calculates the amount of $5 bills and prepares the remainder for further calc
             fives = CurrencyCalc(userInput, 5);
             Display(fives, "Fives");
             userInput = userInput - (fives * 5);
+            new Denominations("$5", fives);
 
             //Calculates the amount of toonies and prepares the remainder for further calc
             toonies = CurrencyCalc(userInput, 2);
             Display(toonies, "Toonies");
             userInput = userInput - (toonies * 2);
+            new Denominations("$2", toonies);
 
             //Calculates the amount of loonies and prepares the remainder for further calc
             loonies = CurrencyCalc(userInput, 1);
             Display(loonies, "Loonies");
             userInput = userInput - loonies;
+            new Denominations("$1", loonies);
 
             //Calculates the amount of Quarters and prepares the remainder for further calc
             quarters = CurrencyCalc(userInput, 0.25);
             Display(quarters, "Quarters");
             userInput = userInput - (quarters * 0.25);
+            new Denominations("$0.25", quarters);
 
             //Calculates the amount of Dimes and prepares the remainder for further calc
             dimes = CurrencyCalc(userInput, 0.10);
             Display(dimes, "Dimes");
             userInput = userInput - (dimes * 0.10);
+            new Denominations("$0.10", dimes);
 
             //Calculates the amount of Nickel and prepares the remainder for further calc
             nickels = CurrencyCalc(userInput, 0.05);
             Display(nickels, "Nickels");
             userInput = userInput - (nickels * 0.05);
+            new Denominations("$0.05", nickels);
 
 
 
@@ -104,7 +125,7 @@ namespace Lab01_WilliamFichtner
         {
             Console.WriteLine("{0}: {1}", input, amount);
         }
-        private static void Draw(CDrawer canvas, double amount)
+        private static void Draw()
         {
 
         }
